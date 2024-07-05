@@ -12,13 +12,13 @@ def job():
     if today.weekday() == 6:  # Sunday
         send_weekly_report()
     
-    if today.day == 1:  # First day of the month
+    if today.day == 5:  # First day of the month
         send_monthly_report()
     print(" email sent succesfully")
 
 # Schedule the job to run daily at 11:59 PM
-schedule.every().day.at("18:06").do(job)
-schedule.every().day.at("18:05").do(job)
+schedule.every().day.at("19:25").do(job)
+schedule.every().day.at("19:24").do(job)
 schedule.every().day.at("18:04").do(job)
 # schedule.every().day.at("21:32").do(job)
 # schedule.every().day.at("21:22").do(job)

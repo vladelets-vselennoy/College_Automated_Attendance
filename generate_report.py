@@ -22,10 +22,10 @@ def generate_daily_report(date):
     """
     df = pd.read_sql_query(query, conn, params=(date,))
     # conn.close()
-    
+    subject_names = df['subject'].unique().tolist()[0]
     # Pivot the data to get the required format
     daily_report = df.pivot(columns='subject', values='student').reset_index(drop=True)
-    return daily_report
+    return (daily_report,subject_names)
 
 def generate_monthly_report(year, month):
     conn = get_db_connection()
