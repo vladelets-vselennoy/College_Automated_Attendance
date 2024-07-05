@@ -3,7 +3,7 @@ from datetime import datetime
 from config import faculty_emails,director_email
 
 from send_email import *
-def send_daily_report():
+def send_daily_report(img):
     today = datetime.now().date()
     report = generate_daily_report(today)
     report.to_excel(f"daily_report_{today}.xlsx")
@@ -18,7 +18,7 @@ def send_daily_report():
     
     send_email(director_email, f"Daily Attendance Report - {today}", 
                "Please find attached the daily attendance report.", 
-               f"daily_report_{today}.xlsx")
+               [f"daily_report_{today}.xlsx",img])
 
 def send_weekly_report():
     today = datetime.now().date()

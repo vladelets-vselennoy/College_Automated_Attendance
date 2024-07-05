@@ -213,7 +213,7 @@ def process_group_image(image_path):
 
 # Example usage
 if __name__ == "__main__":
-    image_path = r"C:\all\Internships\infosys springboard\10-30-00.jpeg"  # Replace with your actual image path
+    image_path = r"C:\all\Internships\infosys springboard\11-30-00.jpeg"  # Replace with your actual image path
     result = process_group_image(image_path)
     
     if "error" in result:
